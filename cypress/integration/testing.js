@@ -12,15 +12,15 @@ describe('My Second Test', function(){
 })
 
 describe('My Third Test', function(){
-    it('Finding an element and', function(){
+    it('Finding an element', function(){
         cy.contains('Take this challenge online')
-        cy.contains('Take this challenge online').click();
-    })
+        
 })
 
-// describe('My Forth Test', function(){
-//     it('Click on the element', function(){
-//         cy.contains('Take this challenge online')
+describe('My Forth Test', function(){
+    it('Click on the element', function(){
+        cy.contains('Take this challenge online').click();
+    })
         
-//     })
-// })
+    })
+})
