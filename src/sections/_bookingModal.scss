@@ -1,0 +1,146 @@
+.bookingStep1 {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #ffff;
+    border: 3px solid lightgrey;
+    padding: 25px;
+    width: 800px;
+    height: 480px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+    .bookingStep1Content {
+        height: 420px;
+        a {
+            text-decoration: none;
+        }
+        p {
+            margin: 25px 0;
+        }
+        .inputStep1 {
+            margin: 40px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+    }
+    .submitStep1-container {
+        display: flex;
+        justify-content: flex-end;
+        .submitBtnStep1 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem 3rem;
+            color: #ffff;
+            background-color: $c-red;
+        }
+    }
+}
+
+.bookingStep2 {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #ffff;
+    border: 3px solid lightgrey;
+    padding: 25px;
+    width: 800px;
+    height: 480px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+    .bookingStep2Content {
+        height: 420px;
+        .roomTitleStep2 {
+            margin-bottom: 25px;
+        }
+        .nameInput {
+            font-size: 25px;
+            label {
+                font-weight: 700;
+            }
+        }
+        #selectTimes {
+            font-size: 25px;
+            border-radius: 4px;
+        }
+        .phoneInput {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+        .emailInput {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+        .inputTime {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+        #selectTimes {
+            font-size: 25px;
+            border-radius: 4px;
+        }
+        .inputParticipants {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            option,
+            select {
+                font-size: 25px;
+            }
+        }
+    }
+    .submitStep2-container {
+        display: flex;
+        justify-content: flex-end;
+        .submitBtnStep2 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem 3rem;
+            color: #ffff;
+            background-color: $c-red;
+        }
+    }
+}
+
+.bookingStep3 {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+    border: 3px solid lightgrey;
+    background-color: #ffff;
+    padding: 25px;
+    text-align: center;
+    h1 {
+        margin: 100px 0 40px;
+    }
+}

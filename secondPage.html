@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./src/main.css">
+</head>
+
+<body>
+
+    <!--header-->
+    <header class="header">
+        <h1 class="logo">Hacker Escape Rooms</h1>
+    </header>
+    <nav class="main-nav">
+        <a class="main-nav-toggle hide"></a>
+        <ul class="main-menu">
+            <li><a href="#">Play online</a></li>
+            <li><a href="#">Play on-site</a></li>
+            <li><a href="#">The story</a></li>
+            <li><a href="contact-us.html"target="_blank">Contact us</a></li>
+
+        </ul>
+    </nav>
+    <!---booking-system-->
+    <div class="bookingStep1">
+        <div class="bookingStep1Content">
+            <h1 class="roomTitle"></h1>
+            <p>What date would you like to come?</p>
+            <div class="inputStep1">
+                <label for="step1Date">
+                Date
+            </label><br>
+                <input type="date" name="step1Date" id="inputDate">
+            </div>
+        </div>
+        <div class="submitStep1-container">
+            <a href="#" class="submitBtnStep1" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
+        </div>
+    </div>
+    <div class="bookingStep2">
+        <div class="bookingStep2Content">
+            <h1 class="roomTitleStep2"></h1>
+            <div class="nameInput">
+                <label for="nameInput">Name</label><br>
+                <input type="name" name="nameInput" id="name" class="nameInput userInput"><br>
+            </div>
+            <div class="phoneInput">
+                <label for="phone">Phone Number</label><br>
+                <input type="text" class="userInput" name="phone">
+            </div>
+            <div class="emailInput">
+                <label for="emailInput">E-mail</label><br>
+                <input type="email" class="userInput" id="email"><br>
+            </div>
+            <div class="inputTime">
+                <label for="inputTime">What time?</label><br>
+                <select id="selectTimes">Select available times</select>
+            </div>
+            <div class="inputParticipants">
+                <label for="inputParticipants">How many participants?</label><br>
+                <select name="inputParticipants" id="inputParticipants">
+            </select>
+            </div>
+        </div>
+        <div class="submitStep2-container">
+            <a href="#" id="postBookingBtn" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
+        </div>
+
+    </div>
+    <div class="bookingStep3">
+        <h1>Thank you!</h1>
+        <a href="#" onclick="giveTitleAndTrigger(event)">Back to challenges</a>
+    </div>
+
+
+
+    <!--filter-prop-->
+    <h2 id="ourChallenges">Our challenges</h2>
+    <section class="filterClass">
+        <div id="filterBtnCenter">
+            <a href="#" class="filterBtn showAndCloseFilter">Filter challenges</a>
+        </div>
+        <!--a link to go back to the main page-->
+        <a class="first-page" href="index.html">Back to main page</a>
+        <div class="filter">
+            <span id=filterTitle>Filter challenges</span>
+            <i class="fas fa-times closeBtn showAndCloseFilter"></i>
+            <div class="threeTypes">
+                <div class="byType types">
+                    <h4>By type</h4>
+                    <div>
+                        <input type="checkbox" class="checkInput" name="online" id="online">
+                        <label for="online">Include online challenges</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkInput" name="onsite" id="onsite">
+                        <label for="onsite">Include on-site challenges</label>
+                    </div>
+                    <div class="showResult"></div>
+                </div>
+                <div class="byRating types">
+                    <h4>By rating</h4>
+                    <i class="far fa-star star minStar1" rate="min-1"></i>
+                    <i class="far fa-star star minStar2" rate="min-2"></i>
+                    <i class="far fa-star star minStar3" rate="min-3"></i>
+                    <i class="far fa-star star minStar4" rate="min-4"></i>
+                    <i class="far fa-star star minStar5" rate="min-5"></i>
+                    <span id="to">to</span>
+                    <i class="fas fa-star star maxStar1" rate="max-1"></i>
+                    <i class="fas fa-star star maxStar2" rate="max-2"></i>
+                    <i class="fas fa-star star maxStar3" rate="max-3"></i>
+                    <i class="fas fa-star star maxStar4" rate="max-4"></i>
+                    <i class="fas fa-star star maxStar5" rate="max-5"></i>
+                </div>
+                <div class="byTags types">
+                    <h4>By tags</h4>
+                </div>
+            </div>
+
+            <div class="keyword">
+                <div>
+                    <h4>Or type to search for keyword</h4>
+                    <input type="text" id="inputSearch" placeholder="Start typing to filter">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="sort">
+        <div class="sortDirection">
+            <!-- <i class="fas fa-sort-amount-down-alt sortIcon" sortType="ascending"></i> -->
+            <i class="fas fa-sort-amount-down sortIcon"></i>
+        </div>
+        <div class="custom-select">
+            <select class="nameOrRate">
+              <option value="0">Sort by</option>
+              <option value="1" class="sortBy">Name</option>
+              <option value="2" class="sortBy">Rate</option>
+            </select>
+          </div>
+    </div>
+    
+    <!--challenge-cards-->
+    <section class="challenges">
+        <div class="challenge-all">
+            <div class="challenges-type"></div>
+            <div class="challenges-lable"></div>
+            <ul class="challenges-list">
+                <li class="challenges-item">
+                    <img class="challenge-picture">
+                    <div class = "icon"></div>
+                    <h3 class="challenge-title"></h3>
+                    <div class="challenge-meta">
+                        <ul class="challenge-rating"></ul>
+                        <div class="participants">
+                            <small class="minParticipants"></small>
+                            <small class="maxParticipants"></small>
+                        </div>
+                    </div>
+                    <p class="challenge-description"></p>
+                    <a class="challenge-cta" href="#" onclick="giveTitleAndTrigger(event)">Book this room</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--footer-->
+    <!--first-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-summary">
+                <h2>[Esc] Hacker Escape Rooms</h2>
+                <p>
+                    Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur aliquip non consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat ipsum culpa enim ut aliqua. Proident eu labore
+                    duis id consequat ipsum occaecat adipisicing nostrud.
+                </p>
+            </div>
+            <!--second-->
+            <div class="footer-sitemap">
+                <h2 class="site">Site map</h2>
+                <ul>
+                    <li><a href="aboutEsc.html" target="_blank">About ESC</a></li>
+                    <li><a href="#">The Story</a></li>
+                    <li><a href="contact-us.html"target="_blank">Contact Us</a></li>
+                    <li><a href="#">Legal</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Play online</a></li>
+                    <li><a href="#">Play on-site</a></li>
+                </ul>
+            </div>
+            <!--third-->
+            <div class="footer-social">
+                <h2 class="follow">Follow us on</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            </li>
+            </ul>
+            </section>
+    </footer>
+
+    <script>
+        document.querySelector('.main-nav-toggle').addEventListener('click', () => {
+            document.querySelector('.main-nav').classList.toggle('open');
+        });
+    </script>
+
+    <script src="./script/secondPage.js"></script>
+    <script src="./script/filterFiles/sort.js"></script>
+    <script type="module" src="./script/filterFiles/getCheckboxes.js"></script>
+    <script type="module" src="./script/filterFiles/filterShowAndClose.js"></script>
+    <script type="module" src="./script/filterFiles/getTags.js"></script>
+    <script type="module" src="./script/filterFiles/getRates.js"></script>
+    <script type="module" src="./script/filterFiles/filterCards.js"></script>
+    <script type="module" src="./script/filterFiles/getInput.js"></script>
+    <script src="./script/booking.js"></script>
+</body>
+
+</html>

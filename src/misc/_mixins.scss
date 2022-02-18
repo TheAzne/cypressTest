@@ -1,0 +1,107 @@
+@use 'sass:math';
+
+@mixin desktop {
+  @media screen and (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin button($bg-color) {
+  display: block;
+  margin: 0.5rem;
+  background-color: $bg-color;
+  padding: 1rem 3rem;
+  border-radius: $border-radius;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($bg-color, 5);
+  }
+}
+
+@mixin section {
+  padding: 1rem;
+}
+
+
+@mixin challenge-ctas {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  &-onsite {
+    @include button($c-lightblue);
+  }
+
+  &-online {
+    font-weight: bold;
+    color: $c-blue;
+    padding: 1rem 2rem;
+  }
+
+  @include desktop {
+    
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px;
+
+    &-online {
+      @include button($c-red);
+    }
+  }
+}
+
+@mixin menu-link {
+  color: $c-white;
+  text-decoration: none;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: $c-lightblue;
+  }
+}
+
+@mixin flexCenter{
+  display:flex;
+  justify-content: center;
+}
+
+@mixin filterBtnStyle{
+  padding-top: 7px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 140px;
+    height: 40px;
+    text-decoration: none;
+    color: rgb(99, 97, 212);
+    border-style: solid;
+    border-color: rgb(136, 139, 160);
+    border-radius: 5px;
+}
+@mixin redBtn{
+  padding-top:10px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 140px;
+  height: 40px;
+  text-decoration: none;
+  color:rgb(250, 249, 249);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $c-red;
+  border-radius: 5px;
+ margin-bottom: 50px;     
+}
+
+@mixin icon{
+  position: relative;
+  font-size: 30px;
+  bottom: 260px;
+  left:300px;
+}
